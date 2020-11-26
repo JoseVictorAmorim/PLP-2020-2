@@ -1,0 +1,5 @@
+print ('Olá! Responda ao questionário para continuar:')
+nome=input('Qual o seu nome?')
+idade=input('Qual a sua idade?')
+curso=input ('Qual curso você pretende fazer e/ou chama sua atenção?')
+print ('Então, seu nome é', nome,', você tem', idade,'anos, e se interessa por', curso,)
