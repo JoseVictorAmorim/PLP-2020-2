@@ -4,17 +4,21 @@ from datetime import date
 class Date:
     __slots__ = ('_Date__Day', '_Date__Month', '_Date__Year')
 
-    def __init__(self, day, month, year):
-        if day <= 30 and day > 0:
+    def __init__(self, day = date.today().day, month = date.today().month, year = date.today().year):
+        if int(day) <= 30 and int(day) > 0:
             self.__Day = day
-        if month > 0 and day <= 12:
+        else:
+            print('Dia não aceito')
+        if int(month) > 0 and int(month) <= 12:
             self.__Month = month
-        self.__Year = year
+        else:
+            print('Mes não aceito')
+        self.__Year = int(year)
 
-    def __init__(self):
-        self.__Day = date.today().day
-        self.__Month = date.today().month
-        self.__Year = date.today().year
+    #def __init__(self):
+      #  self.__Day = date.today().day
+      # self.__Month = date.today().month
+      # self.__Year = date.today().year
 
     @property
     def Day(self):
@@ -40,9 +44,24 @@ class Date:
     def Year(self, newYear):
         self.__Year = newYear
 
+    def __str__(self):
+        print(f'{self.__Day}/{self.__Month}/{self.__Year}')
+    
+    def printDate(self):
+        self.__str__()
+
+
+d = int(input("Digite o dia: "))
+m = int(input("Digite o mês: "))
+y = int(input("Digite o dia: "))
+
+d2 = Date(d, m, y)
+print(f'{d2.Day}\n{d2.Month}\n{d2.Year}')
 
 d1 = Date()
-d2 = Date('12', '11', '2021')
-
 print(f'{d1.Day}\n{d1.Month}\n{d1.Year}')
-print(f'{d2.Day}\n{d2.Month}\n{d2.Year}')
+d1.Day = 15
+d1.Month = 12
+d1.Year = 2020
+d1.printDate()
+print(f'{d1.Day}\n{d1.Month}\n{d1.Year}')
