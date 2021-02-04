@@ -15,11 +15,6 @@ class Date:
             print('Mes não aceito')
         self.__Year = int(year)
 
-    #def __init__(self):
-      #  self.__Day = date.today().day
-      # self.__Month = date.today().month
-      # self.__Year = date.today().year
-
     @property
     def Day(self):
         return f'DIA: {self.__Day}'
