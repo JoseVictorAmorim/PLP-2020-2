@@ -13,7 +13,7 @@ class Paciente:
     
     def definir_id(self, identificacao):
         if(len(identificacao) > 5):
-            print('Erro: O ID possui mais de 5 caracteres')
+            print('Erro: O ID possui mais de 5 caracteres. Revise e tente novamente')
         else:
             self.__id = identificacao
     
