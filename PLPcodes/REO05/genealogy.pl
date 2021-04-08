@@ -1,3 +1,7 @@
+/*Aluno: José Victor Amorim Morais - 202010163 */
+
+
+/*Base de dados fornecida*/
 parent(jafe, gomer).
 parent(jafe, magoge).
 parent(jafe, madai).
@@ -31,4 +35,6 @@ parent(misraim, causulim).
 parent(raama, seba).
 parent(raama, deda).
 
+
+/*Resolução*/
 all_ancestors(X) :- parent(Y, X), write(Y), nl, all_ancestors(Y).
